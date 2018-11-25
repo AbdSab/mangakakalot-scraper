@@ -5,17 +5,25 @@ import shutil
 from PIL import Image
 import threading
 from proxy import Proxy
+import sys
+
+#Args:
+#url
+#file name
+#starting chapter
+#number of threads
 
 #Proxies
 proxy = Proxy()
 
 #Args
-MANGA  = "NanatsuNoTaizai"
-URL = "https://manganelo.com/chapter/read_nanatsu_no_taizai_manga_online_free/chapter_"
+#Url exemple "https://manganelo.com/chapter/read_nanatsu_no_taizai_manga_online_free/chapter_"
+MANGA  = sys.argv[2]
+URL = sys.argv[1]
 
 # Thread Paramters
-NMBR = 1
-CHAPTERS = 289
+NMBR = sys.argv[4]
+CHAPTERS = sys.argv[3]
 INC = CHAPTERS/NMBR
 
 def main(th):
